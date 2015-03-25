@@ -5,6 +5,8 @@ https://github.com/rsp/c-experiments
 
 Some experiments with C.
 
+Currently this is GCC-specific.
+
 This is still work in progress and is not finished yet.
 
 Prerequisites
