@@ -14,13 +14,13 @@ empty-phresnel: Makefile empty.c
 	gcc empty.c -o empty-phresnel -Os -mfpmath=387 \
 	-mfancy-math-387 -fmerge-all-constants -fsingle-precision-constant \
 	-fno-math-errno -Wall -ldl -ffast-math -nostartfiles -nostdlib  \
-	-fno-unroll-loops -fshort-double
+	-fno-unroll-loops
 
 empty-phresnel-stripped: Makefile empty.c
 	gcc empty.c -o empty-phresnel-stripped -Os -mfpmath=387 \
 	-mfancy-math-387 -fmerge-all-constants -fsingle-precision-constant \
 	-fno-math-errno -Wall -ldl -ffast-math -nostartfiles -nostdlib  \
-	-fno-unroll-loops -fshort-double
+	-fno-unroll-loops
 	strip -R .note -R .comment -R .eh_frame -R .eh_frame_hdr -s empty-phresnel-stripped
 
 clean:
