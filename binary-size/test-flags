@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# testing gcc flags for issue:
+# https://github.com/rsp/c-experiments/issues/1
+
+flags="-Os -mfpmath=387 \
+    -mfancy-math-387 -fmerge-all-constants -fsingle-precision-constant \
+    -fno-math-errno -Wall -ldl -ffast-math -nostartfiles -nostdlib  \
+    -fno-unroll-loops -fshort-double"
+
+for flag in $flags; do
+	echo "TESTING FLAG: $flag"
+	gcc empty.c -o test-flags-out $flag && echo OK || echo ERROR
+done
